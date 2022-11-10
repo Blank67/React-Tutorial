@@ -1,24 +1,24 @@
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 
-function App() {
+const App = () => {
   const expenses = [
     {
       expenseDate: new Date(2022, 8, 9),
       expenseTitle: "Food",
       expenseAmount: 50,
-      locationOfExpenditure: "Burger King",
+      // locationOfExpenditure: "Burger King",
     },
     {
       expenseDate: new Date(2022, 8, 10),
       expenseTitle: "Petrol",
       expenseAmount: 100,
-      locationOfExpenditure: "Petrol Pump",
+      // locationOfExpenditure: "Petrol Pump",
     },
     {
       expenseDate: new Date(2022, 8, 11),
       expenseTitle: "Movies",
       expenseAmount: 200,
-      locationOfExpenditure: "Movie Theater",
+      // locationOfExpenditure: "Movie Theater",
     },
   ];
   return (
