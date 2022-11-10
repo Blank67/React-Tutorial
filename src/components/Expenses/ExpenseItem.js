@@ -5,10 +5,15 @@ import Card from '../UI/Card';
 
 const ExpenseItem = (props) => {
 
+    const deleteHandler = (event) => {
+        console.log("Delete Button Clicked!!",event);
+    };
+
     return (
         <Card className='expense-item'>
-            <ExpenseDate newDate = {props.date}/>
-            <ExpenseDetails newTitle = {props.title} newLocation = {props.location} newAmount = {props.amount}/>
+            <ExpenseDate newDate={props.date} />
+            <ExpenseDetails newTitle = {props.title} newAmount = {props.amount}/>
+            <button onClick={deleteHandler}>Delete Expense</button>
         </Card>
     );
 }
