@@ -3,23 +3,19 @@ import ExpenseItem from "./ExpenseItem";
 import './Expenses.css';
 
 const Expenses = (props) => {
+    // console.log(props.items);
     return (
         <Card className='expenses'>
-            <ExpenseItem
-                title={props.items[0].expenseTitle}
-                amount={props.items[0].expenseAmount}
-                date={props.items[0].expenseDate}
-            />
-            <ExpenseItem
-                title={props.items[1].expenseTitle}
-                amount={props.items[1].expenseAmount}
-                date={props.items[1].expenseDate}
-            />
-            <ExpenseItem
-                title={props.items[2].expenseTitle}
-                amount={props.items[2].expenseAmount}
-                date={props.items[2].expenseDate}
-            />
+            {props.items.map((item, index) => {
+                return (
+                    <ExpenseItem
+                        key={index}
+                        title={item.title}
+                        amount={item.amount}
+                        date={item.date}
+                    />
+                )
+            })}
         </Card>
     );
 }
