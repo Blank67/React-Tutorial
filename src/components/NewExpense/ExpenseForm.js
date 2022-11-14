@@ -1,43 +1,20 @@
 import { useState } from 'react';
 import './ExpenseForm.css';
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
 
-    //Methdod 1
     const [enteredTitle,setEnteredTitle] = useState('');
     const [enteredAmount,setEnteredAmount] = useState('');
     const [enteredDate,setEnteredDate] = useState('');
-    //Method 2. Both are correct but we will use Method 1 
-    // const [userInput,setUserInput] = useState({
-    //     enteredTitle:'',
-    //     enteredAmount:'',
-    //     enteredDate:''
-    // });
 
     const titleChangeHandler = (e) => {
-        // console.log(e.target.value);
         setEnteredTitle(e.target.value);
-        // setUserInput({
-        //     ...userInput,
-        //     enteredTitle:e.target.value
-        // });
-        // setUserInput((prevState) => { //We use this approach as in previous way if we have multiple states we won't get the latest previous state every time.
-        //     return {...userInput, enteredTitle:e.target.value};
-        // });
     }
     const amountChangeHandler = (e) => {
-        console.log(e.target.value);
         setEnteredAmount(e.target.value);
-        // setUserInput((prevState) => {
-        //     return {...userInput, enteredAmount:e.target.value};
-        // });
     }
     const dateChangeHandler = (e) => {
-        // console.log(e.target.value);
         setEnteredDate(e.target.value);
-        // setUserInput((prevState) => {
-        //     return {...userInput, enteredDate:e.target.value};
-        // });
     }
     const submitHandler = (e) => {
         e.preventDefault();
@@ -46,7 +23,7 @@ const ExpenseForm = () => {
             amount:enteredAmount,
             date:new Date(enteredDate)
         }
-        console.log(expenseData);
+        props.onSaveExpenseData(expenseData);
         setEnteredTitle('');
         setEnteredAmount('');
         setEnteredDate('');
