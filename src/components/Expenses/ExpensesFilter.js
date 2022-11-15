@@ -13,8 +13,8 @@ const ExpensesFilter = (props) => {
                 <select value={props.selected} onChange={dropdownChangeHandler}>
                     <option value='2022'>2022</option>
                     <option value='2021'>2021</option>
-                    <option value='2020'>2029</option>
                     <option value='2019'>2020</option>
+                    <option value='2020'>2019</option>
                 </select>
             </div>
         </div>
