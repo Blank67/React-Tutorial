@@ -19,7 +19,7 @@ const DUMMY_EXPENSES = [
     id:'e3',
     title: "Movies",
     amount: 200,
-    date: new Date(2022, 8, 11),
+    date: new Date(2021, 8, 11),
   },
 ];
 
